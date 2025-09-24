@@ -1,4 +1,7 @@
 ## Book Finder React Application
+### Deployed Link:
+- This project is hosted on Vercel, you can click on the link below:
+- - https://book-finder-puce-eight.vercel.app/
 
 A simple web application built with React to search for books using the Open Library API.
 
@@ -18,8 +21,6 @@ A simple web application built with React to search for books using the Open Lib
 ### Technology Stack
 - React 
 - Open Library API: it is used as the external data soruce for the books.
-
-This project is hosted on Vercel, you can click on the link below:
 
 ### How It Works
 This project is a single-page application (SPA) centered around the HomePage component. This component manages all the application's state, including the search query, API results, loading status, and error handling.
