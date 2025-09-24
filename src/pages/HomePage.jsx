@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { fetchBooks } from "../api/OpenLibrary";
 import BookList from "../components/BookList";
 import BookDetails from "../components/BookDetails";
 import SearchBar from "../components/SearchBar";
@@ -19,14 +20,8 @@ export default function HomePage() {
     setHasSearched(true);
 
     try {
-      const res = await fetch(
-        `https://openlibrary.org/search.json?q=${query}`
-      );
-      if (!res.ok) {
-        throw new Error("Something went wrong with the request.");
-      }
-      const data = await res.json();
-      setBooks(data.docs || []);
+      const res = await fetchBooks(query);
+      setBooks(res)
     } catch (error) {
       console.error(error);
       setError("Failed to fetch books. Please check your connection and try again.");
